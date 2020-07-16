@@ -29,8 +29,8 @@ DROP TABLE IF EXISTS Orders;
 
 CREATE TABLE Orders (
 	OrderId INT,
-    ISBN CHAR(13),
-    OrderNumber CHAR(25),
+    ISBN VARCHAR(13),
+    OrderNumber VARCHAR(25),
     OrderDate date,
     QuantityOrdered INT,
     BranchId INT,
