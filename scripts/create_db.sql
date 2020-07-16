@@ -31,10 +31,10 @@ CREATE TABLE Books (
     Author VARCHAR(100),
     Title VARCHAR(200),
     BookSubject VARCHAR(100),
+	CostPrice DOUBLE,
+    SellingPrice DOUBLE,
     QuantityOnHand INT,
     YearToDateQuantitySold INT,
-    CostPrice DECIMAL(4,2),
-    SellingPrice DECIMAL(4,2),
     primary key (ISBN)
 );
 
@@ -42,7 +42,7 @@ Insert into Books
 VALUES ("9781783085569", "Linley",  "  'A Midsummer Night's Dream' in Context: Magic, Madness and Mayhem", "English Literature", 22.5, 27.99, 3, 33),
 ( "9780748638482", "Bernheimer",  " 	The 'Alids: The First Family of Islam", "Religion", 20, 24.99, 7, 20),
 ( "9780511555121", "Walaskay", 	"'And so we Came to Rome ': The Political Perspective of St Luke", "Religion", 18, 22.99, 11, 75),
-( "9780511554773", "Sampley",  "	'And The Two Shall Become One Flesh': A Study of Traditions in Ephesians", "Religion", 71.75, 86.99, 1, 26),
+( "9780511554773", "Sampley",  "	'And The Two Shall Become One Flesh': A Study of Traditions in Ephesians", "Religion", 71.75, 86.99, 19.5, 26),
 ( "9780511779527", "Ruys", 	"'Armed Attack' and Article 51 of the UN Charter: Evolutions in Customary Law and Practice", "Law", 53, 64.99, 10, 55),
 ( "9780511581816", "Cross",  "  	'By the Banks of the Neva': Chapters from the Lives and Careers of the British in Eighteenth-Century Russia", "European History", 29.25, 35.99, 7, 36),
 ( "9781580466806", "Owens",  " 'By My Absolute Royal Authority': Justice and the Castilian Commonwealth at the Beginning of the First Global Age", "European History", 66, 79.99, 6, 74),
@@ -86,7 +86,6 @@ CREATE TABLE Publisher (
     Phone VARCHAR(12),
     BranchID INT,
     primary key (PublisherNumber)
-
 );
 
 Insert into Publisher
