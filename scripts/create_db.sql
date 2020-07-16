@@ -71,3 +71,28 @@ VALUE (1, " 0-684-8328-5", "00084848554", "2020-7-04", "2", "1", "1");
 
 SELECT *
 FROM Orders;
+
+DROP TABLE IF EXISTS Publisher;
+
+CREATE TABLE Publisher (
+    PublisherNumber INT,
+    Website VARCHAR(100),
+    Address VARCHAR(100),
+    EmailAddress VARCHAR(100),
+    CompanyName VARCHAR(100),
+    Province VARCHAR(2),    
+    PostalCode VARCHAR(6),
+    City VARCHAR(100),
+    Phone VARCHAR(12),
+    BranchID INT,
+    primary key (PublisherNumber)
+
+);
+
+Insert into Publisher
+VALUE (1, "www.publisher1.com", "no 1, Publisher1 street", "publisher1@gmail.com", "Publisher1", "QC", 
+"H9G2B7", "DDO", "5140153950", 1); 
+
+SELECT *
+FROM Publisher;
+
