@@ -23,3 +23,23 @@ VALUE (1, "John", "Doe", "john@doe.com", "123-456-6789", "123 John St", "1T2Y3U"
 
 SELECT *
 FROM Customers;
+
+
+DROP TABLE IF EXISTS Orders;
+
+CREATE TABLE Orders (
+	OrderId INT,
+    ISBN CHAR(13),
+    OrderNumber CHAR(25),
+    OrderDate date,
+    QuantityOrdered INT,
+    BranchId INT,
+    PublisherId INT,
+    primary key (OrderId)
+);
+
+INSERT INTO Orders
+VALUE (1, " 0-684-8328-5", "00084848554", "2020-7-04", "2", "1", "1");
+
+SELECT *
+FROM Orders;
