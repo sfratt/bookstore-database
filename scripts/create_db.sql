@@ -27,7 +27,6 @@ FROM Customers;
 DROP TABLE IF EXISTS Books;
 
 CREATE TABLE Books (
-	BookId VARCHAR(100),
     ISBN VARCHAR(13),
     Author VARCHAR(100),
     Title VARCHAR(200),
@@ -36,7 +35,7 @@ CREATE TABLE Books (
     YearToDateQuantitySold INT,
     CostPrice DOUBLE,
     SellingPrice DOUBLE,
-    primary key (BookId)
+    primary key (ISBN)
 );
 
 Insert into Books
