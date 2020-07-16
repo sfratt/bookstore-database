@@ -3,6 +3,7 @@ USE bookstore;
 
 DROP TABLE IF EXISTS Customers;
 DROP TABLE IF EXISTS Orders;
+DROP TABLE IF EXISTS Books;
 
 
 CREATE TABLE Customers (
@@ -23,10 +24,6 @@ CREATE TABLE Customers (
 INSERT INTO Customers
 VALUE (1, "John", "Doe", "john@doe.com", "123-456-6789", "123 John St", "1T2Y3U", "Montreal", "QC", "JohnDoe", 4);
 
-SELECT *
-FROM Customers;
-
-DROP TABLE IF EXISTS Books;
 
 CREATE TABLE Books (
     ISBN VARCHAR(13),
@@ -37,10 +34,10 @@ CREATE TABLE Books (
     YearToDateQuantitySold INT,
     CostPrice DECIMAL(4,2),
     SellingPrice DECIMAL(4,2),
-    primary key (ISBN)
+    PRIMARY KEY (ISBN)
 );
 
-Insert into Books
+INSERT INTO Books
 VALUES ("9781783085569", "Linley",  "  'A Midsummer Night's Dream' in Context: Magic, Madness and Mayhem", "English Literature", 22.5, 27.99, 3, 33),
 ( "9780748638482", "Bernheimer",  " 	The 'Alids: The First Family of Islam", "Religion", 20, 24.99, 7, 20),
 ( "9780511555121", "Walaskay", 	"'And so we Came to Rome ': The Political Perspective of St Luke", "Religion", 18, 22.99, 11, 75),
@@ -52,20 +49,15 @@ VALUES ("9781783085569", "Linley",  "  'A Midsummer Night's Dream' in Context: M
 ( "9781316271353", "Palen",  "  	The 'Conspiracy' of Free Trade: The Anglo-American Struggle over Empire and Economic Globalisation", "History Cross Discipline", 45.5, 55.99, 2, 36),
 ("9781846159572", "Tether",  " 	The 'Continuations' of Chrétien's 'Perceval': Content and Construction, Extension and Ending", "English Literature", 94.25, 114.99, 13, 11);
 
-SELECT *
-FROM Books;
-
-DROP TABLE IF EXISTS Orders;
 
 CREATE TABLE Orders (
-	OrderId INT,
     ISBN VARCHAR(13),
     OrderNumber VARCHAR(25),
     OrderDate date,
     QuantityOrdered INT,
     BranchId INT,
     PublisherId INT,
-    PRIMARY KEY (OrderId)
+    PRIMARY KEY (OrderNumber)
 );
 
 INSERT INTO Orders
