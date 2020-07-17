@@ -1,9 +1,11 @@
-CREATE DATABASE IF NOT EXISTS bookstore;
+-- CREATE DATABASE IF NOT EXISTS bookstore;
+CREATE DATABASE bookstore;
 USE bookstore;
 
 DROP TABLE IF EXISTS Customers;
 DROP TABLE IF EXISTS Orders;
 DROP TABLE IF EXISTS Books;
+DROP TABLE IF EXISTS Publisher;
 
 
 CREATE TABLE Customers
@@ -33,10 +35,10 @@ CREATE TABLE Books
     Author VARCHAR(100),
     Title VARCHAR(200),
     BookSubject VARCHAR(100),
+	CostPrice DECIMAL(4, 2),
+    SellingPrice DECIMAL(4, 2),
     QuantityOnHand INT,
     YearToDateQuantitySold INT,
-    CostPrice DECIMAL(4,2),
-    SellingPrice DECIMAL(4,2),
     PRIMARY KEY (ISBN)
 );
 
@@ -45,7 +47,7 @@ VALUES
     ( "9781783085569", "Linley", "  'A Midsummer Night's Dream' in Context: Magic, Madness and Mayhem", "English Literature", 22.5, 27.99, 3, 33),
     ( "9780748638482", "Bernheimer", " 	The 'Alids: The First Family of Islam", "Religion", 20, 24.99, 7, 20),
     ( "9780511555121", "Walaskay", "'And so we Came to Rome ': The Political Perspective of St Luke", "Religion", 18, 22.99, 11, 75),
-    ( "9780511554773", "Sampley", "	'And The Two Shall Become One Flesh': A Study of Traditions in Ephesians", "Religion", 71.75, 86.99, 1, 26),
+    ( "9780511554773", "Sampley", "	'And The Two Shall Become One Flesh': A Study of Traditions in Ephesians", "Religion", 71.75, 86.99, 20, 26),
     ( "9780511779527", "Ruys", "'Armed Attack' and Article 51 of the UN Charter: Evolutions in Customary Law and Practice", "Law", 53, 64.99, 10, 55),
     ( "9780511581816", "Cross", "  	'By the Banks of the Neva': Chapters from the Lives and Careers of the British in Eighteenth-Century Russia", "European History", 29.25, 35.99, 7, 36),
     ( "9781580466806", "Owens", " 'By My Absolute Royal Authority': Justice and the Castilian Commonwealth at the Beginning of the First Global Age", "European History", 66, 79.99, 6, 74),
@@ -67,4 +69,41 @@ CREATE TABLE Orders
 
 INSERT INTO Orders
 VALUES
-    (1, " 0-684-8328-5", "00084848554", "2020-7-04", "2", "1", "1");
+    (1,
+        " 0-684-8328-5",
+        "00084848554",
+        "2020-7-04",
+        "2",
+        "1",
+        "1"
+);
+
+
+CREATE TABLE Publisher
+(
+    PublisherNumber INT,
+    Website VARCHAR(100),
+    Address VARCHAR(100),
+    EmailAddress VARCHAR(100),
+    CompanyName VARCHAR(100),
+    Province VARCHAR(2),
+    PostalCode VARCHAR(6),
+    City VARCHAR(100),
+    Phone VARCHAR(12),
+    BranchID INT,
+    PRIMARY KEY (PublisherNumber)
+);
+
+INSERT INTO Publisher
+VALUES
+    (1,
+        "www.publisher1.com",
+        "no 1, Publisher1 street",
+        "publisher1@gmail.com",
+        "Publisher1",
+        "QC",
+        "H9G2B7",
+        "DDO",
+        "5140153950",
+        1
+);
