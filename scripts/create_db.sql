@@ -1,7 +1,13 @@
 CREATE DATABASE IF NOT EXISTS bookstore;
 USE bookstore;
 
+DROP TABLE IF EXISTS Orders;
+
 DROP TABLE IF EXISTS Customers;
+
+DROP TABLE IF EXISTS Books;
+
+DROP TABLE IF EXISTS Publishers;
 
 CREATE TABLE Customers (
 	CustomerId INT,
@@ -18,14 +24,6 @@ CREATE TABLE Customers (
     primary key (CustomerId)
 );
 
-INSERT INTO Customers
-VALUE (1, "John", "Doe", "john@doe.com", "123-456-6789", "123 John St", "1T2Y3U", "Montreal", "QC", "JohnDoe", 4);
-
-SELECT *
-FROM Customers;
-
-DROP TABLE IF EXISTS Books;
-
 CREATE TABLE Books (
     ISBN VARCHAR(13),
     Author VARCHAR(100),
@@ -37,6 +35,36 @@ CREATE TABLE Books (
     SellingPrice DECIMAL(4,2),
     primary key (ISBN)
 );
+
+CREATE TABLE Publishers (
+    PublisherId INT,
+    Website VARCHAR(100),
+    Address VARCHAR(100),
+    EmailAddress VARCHAR(100),
+    CompanyName VARCHAR(100),
+    Province VARCHAR(2),    
+    PostalCode VARCHAR(6),
+    City VARCHAR(100),
+    Phone VARCHAR(12),
+    BranchID INT,
+    primary key (PublisherId)
+);
+
+CREATE TABLE Orders (
+    OrderNumber INT,
+    OrderDate date,
+    QuantityOrdered INT,
+    ISBN VARCHAR(13),
+    PublisherId INT,
+    primary key (OrderNumber),
+    foreign key (ISBN) REFERENCES Books(ISBN),
+    BranchId INT,
+    -- foreign key (BranchId) REFERENCES Branches(BranchId),
+    foreign key (PublisherId) REFERENCES Publishers(PublisherId)
+);
+
+INSERT INTO Customers
+VALUE (1, "John", "Doe", "john@doe.com", "123-456-6789", "123 John St", "1T2Y3U", "Montreal", "QC", "JohnDoe", 4);
 
 Insert into Books
 VALUES ("9781783085569", "Linley",  "  'A Midsummer Night's Dream' in Context: Magic, Madness and Mayhem", "English Literature", 22.5, 27.99, 3, 33),
@@ -50,26 +78,12 @@ VALUES ("9781783085569", "Linley",  "  'A Midsummer Night's Dream' in Context: M
 ( "9781316271353", "Palen",  "  	The 'Conspiracy' of Free Trade: The Anglo-American Struggle over Empire and Economic Globalisation", "History Cross Discipline", 45.5, 55.99, 2, 36),
 ("9781846159572", "Tether",  " 	The 'Continuations' of Chrétien's 'Perceval': Content and Construction, Extension and Ending", "English Literature", 94.25, 114.99, 13, 11);
 
-SELECT *
-FROM Books;
-
-DROP TABLE IF EXISTS Orders;
-
-CREATE TABLE Orders (
-    OrderNumber INT,
-    OrderDate date,
-    QuantityOrdered INT,
-    ISBN VARCHAR(13),
-    BranchId INT,
-    PublisherId INT,
-    primary key (OrderNumber),
-    foreign key Orders(ISBN) REFERENCES Books(ISBN),
-    foreign key Orders(PublisherId) REFERENCES Publishers(PublisherId),
-    foreign key Orders(BranchId) REFERENCES Branches(BranchId)
-);
+Insert into Publishers
+VALUE (1, "www.publisher1.com", "no 1, Publisher1 street", "publisher1@gmail.com", "Publisher1", "QC", 
+"H9G2B7", "DDO", "5140153950", 1); 
 
 INSERT INTO Orders
-VALUE   (1,  "2020-7-04", "2", "9780748638482", "1", "1"),
+VALUES  (1,  "2020-7-04", "2", "9780748638482", "1", "1"),
 		(2,  "2020-7-04", "2", "9780511555121", "1", "1"),
         (3,  "2020-7-04", "3", "9780511554773", "1", "1"),
         (4,  "2020-7-04", "1", "9780511779527", "1", "1"),
@@ -77,53 +91,38 @@ VALUE   (1,  "2020-7-04", "2", "9780748638482", "1", "1"),
         (6,  "2019-7-04", "4", "9781580466806", "1", "1"),
         (7,  "2019-7-04", "5", "9781139872072", "1", "1"),
         (8,  "2019-7-04", "1", "9781316271353", "1", "1"),
-        (9,  "2019-7-04", "5", "9780748638482", "2", "1"),
-        (10, "2019-7-04", "3", "9780511555121", "2", "1"),
-        (11, "2018-7-04", "6", "9780511554773", "2", "1"),
-        (12, "2018-7-04", "1", "9780511779527", "3", "2"),
-        (13, "2018-7-04", "1", "9780511581816", "3", "2"),
-        (14, "2018-7-04", "1", "9781580466806", "3", "2"),
-        (15, "2018-7-04", "1", "9781139872072", "3", "2"),
-        (16, "2020-7-04", "2", "9780748638482", "3", "2"),
-		(17, "2020-7-04", "3", "9780511555121", "3", "2"),
-        (18, "2020-7-04", "3", "9780511554773", "3", "2"),
-        (19, "2020-7-04", "3", "9780511779527", "3", "2"),
-        (20, "2020-7-04", "9", "9780511581816", "3", "2"),
-        (21, "2019-7-04", "3", "9781580466806", "3", "2"),
-        (22, "2019-7-04", "8", "9781139872072", "4", "2"),
-        (23, "2019-7-04", "1", "9781316271353", "4", "2"),
-        (24, "2019-7-04", "1", "9780748638482", "4", "2"),
-        (25, "2019-7-04", "5", "9780511555121", "4", "2"),
-        (26, "2018-7-04", "5", "9780511554773", "4", "2"),
-        (27, "2018-7-04", "1", "9780511779527", "4", "2"),
-        (28, "2018-7-04", "1", "9780511581816", "4", "2"),
-        (29, "2018-7-04", "6", "9781580466806", "4", "2"),
-        (30, "2018-7-04", "3", "9781139872072", "4", "2"),
-        (31, "2018-7-04", "5", "9780511555121", "4", "2");
+        (9,  "2019-7-04", "5", "9780748638482", "1", "1"),
+        (10, "2019-7-04", "3", "9780511555121", "1", "1"),
+        (11, "2018-7-04", "6", "9780511554773", "1", "1"),
+        (12, "2018-7-04", "1", "9780511779527", "1", "2"),
+        (13, "2018-7-04", "1", "9780511581816", "1", "2"),
+        (14, "2018-7-04", "1", "9781580466806", "1", "2"),
+        (15, "2018-7-04", "1", "9781139872072", "1", "2"),
+        (16, "2020-7-04", "2", "9780748638482", "1", "2"),
+		(17, "2020-7-04", "3", "9780511555121", "1", "2"),
+        (18, "2020-7-04", "3", "9780511554773", "1", "2"),
+        (19, "2020-7-04", "3", "9780511779527", "1", "2"),
+        (20, "2020-7-04", "9", "9780511581816", "1", "2"),
+        (21, "2019-7-04", "3", "9781580466806", "1", "2"),
+        (22, "2019-7-04", "8", "9781139872072", "1", "2"),
+        (23, "2019-7-04", "1", "9781316271353", "1", "2"),
+        (24, "2019-7-04", "1", "9780748638482", "1", "2"),
+        (25, "2019-7-04", "5", "9780511555121", "1", "2"),
+        (26, "2018-7-04", "5", "9780511554773", "1", "2"),
+        (27, "2018-7-04", "1", "9780511779527", "1", "2"),
+        (28, "2018-7-04", "1", "9780511581816", "1", "2"),
+        (29, "2018-7-04", "6", "9781580466806", "1", "2"),
+        (30, "2018-7-04", "3", "9781139872072", "1", "2"),
+        (31, "2018-7-04", "5", "9780511555121", "1", "2");
 
 SELECT *
-FROM Orders;
+FROM Customers;
 
-DROP TABLE IF EXISTS Publishers;
-
-CREATE TABLE Publishers (
-    PublisherNumber INT,
-    Website VARCHAR(100),
-    Address VARCHAR(100),
-    EmailAddress VARCHAR(100),
-    CompanyName VARCHAR(100),
-    Province VARCHAR(2),    
-    PostalCode VARCHAR(6),
-    City VARCHAR(100),
-    Phone VARCHAR(12),
-    BranchID INT,
-    primary key (PublisherNumber)
-);
-
-Insert into Publishers
-VALUE (1, "www.publisher1.com", "no 1, Publisher1 street", "publisher1@gmail.com", "Publisher1", "QC", 
-"H9G2B7", "DDO", "5140153950", 1); 
+SELECT *
+FROM Books;
 
 SELECT *
 FROM Publishers;
 
+SELECT *
+FROM Orders;
