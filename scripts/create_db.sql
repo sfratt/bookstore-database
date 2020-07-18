@@ -2,11 +2,6 @@ DROP DATABASE IF EXISTS Bookstore;
 CREATE DATABASE Bookstore;
 USE Bookstore;
 
--- DROP TABLE IF EXISTS Orders;
--- DROP TABLE IF EXISTS Customers;
--- DROP TABLE IF EXISTS Publishers;
--- DROP TABLE IF EXISTS Books;
-
 CREATE TABLE Customers
 (
     CustomerId INT NOT NULL PRIMARY KEY,
