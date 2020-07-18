@@ -54,8 +54,10 @@ CREATE TABLE Orders
     QuantityOrdered INT,
     ISBN VARCHAR(13),
     PublisherId INT,
-    FOREIGN KEY (ISBN) REFERENCES Books(ISBN),
     BranchId INT,
+    CustomerId INT,
+    FOREIGN KEY (ISBN) REFERENCES Books(ISBN),
+    foreign key (CustomerId) REFERENCES Customers(CustomerId),
     -- FOREIGN KEY (BranchId) REFERENCES Branches(BranchId),
     FOREIGN KEY (PublisherId) REFERENCES Publishers(PublisherId)
 );
