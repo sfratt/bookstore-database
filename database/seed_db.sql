@@ -1,72 +1,76 @@
-INSERT INTO Bookstores --(BookstoreId, Address)
+INSERT INTO Bookstores
+    (Address)
 VALUES
-    (1 ,"2151 Et Rd.,Pont-Saint-Martin,LB26 6AY,Greenland"),
-    (2 ,"1677 Enim Street,Gretna,5336 JH,Jordan"),
-    (3 ,"P.O. Box 276, 3291 Massa Ave,Mokpo,79705,Saint Barthélemy"),
-    (4 ,"Ap #882-8203 Neque. St.,Guna,61105,Jamaica"),
-    (5 ,"P.O. Box 782, 1842 Enim, Street,Bhavnagar,491334,Iran"),
-    (6 ,"807-1811 Eros Road,Alnwick,6834,Malawi"),
-    (7 ,"Ap #897-5477 Faucibus St.,Saharanpur,27207,Mayotte"),
-    (8 ,"P.O. Box 119, 9566 Donec Street,Fishguard,88450,Tajikistan"),
-    (9 ,"724-6017 Ut Rd.,Brandon,0951 LB,Chile"),
-    (10 ,"Ap #698-2229 Metus Road,Burnpur,5494,Belarus");
+    ("2151 Et Rd.,Pont-Saint-Martin,LB26 6AY,Greenland"),
+    ("1677 Enim Street,Gretna,5336 JH,Jordan"),
+    ("P.O. Box 276, 3291 Massa Ave,Mokpo,79705,Saint Barthélemy"),
+    ("Ap #882-8203 Neque. St.,Guna,61105,Jamaica"),
+    ("P.O. Box 782, 1842 Enim, Street,Bhavnagar,491334,Iran"),
+    ("807-1811 Eros Road,Alnwick,6834,Malawi"),
+    ("Ap #897-5477 Faucibus St.,Saharanpur,27207,Mayotte"),
+    ("P.O. Box 119, 9566 Donec Street,Fishguard,88450,Tajikistan"),
+    ("724-6017 Ut Rd.,Brandon,0951 LB,Chile"),
+    ("Ap #698-2229 Metus Road,Burnpur,5494,Belarus");
 
-INSERT INTO Customers --(id,firstname,lastname,email,phone,address,postalcode,city,province,companyName) 
+INSERT INTO Customers
+    (FirstName, LastName, Email, Phone, Address, PostalCode, City, Province, CompanyName)
 VALUES
-    (1, "Carlos", "Mayer", "sed.dui@ipsum.co.uk", "4489980672", "Ap #701-5466 Donec Av.", "G1L0P5", "Richmond", "QC", "Mauris Nulla Corp."),
-    (2, "Sacha", "Fleming", "Nulla@felispurusac.ca", "3284912130", "2892 Risus. Avenue", "N3M0H2", "Essex", "ON", "Volutpat PC"),
-    (3, "Eliana", "Holt", "lorem.ac@semmollis.net", "9333638412", "606-7765 Posuere Street", "J6C1R5", "Saint-Hilarion", "QC", "Ut Tincidunt Vehicula Institute"),
-    (4, "Tana", "Potter", "lectus.Nullam@lobortisClassaptent.net", "4162164060", "P.O. Box 867, 6193 At Rd.", "T9A0V2", "Calmar", "AB", "Ligula Tortor PC"),
-    (5, "Galvin", "Middleton", "magna.tellus.faucibus@neque.org", "5398889875", "385-508 Tempus, Road", "V3W3V1", "Cariboo Regional District", "BC", "Gravida LLC"),
-    (6, "Laith", "Snider", "at.pede.Cras@euismod.com", "4111785748", "6649 Et Ave", "T7A0J4", "Trochu", "AB", "Id Sapien Company"),
-    (7, "Donna", "Raymond", "Nullam.suscipit.est@anteiaculisnec.edu", "2719483807", "173-3595 Adipiscing Rd.", "T6X0Y7", "Edmonton", "AB", "Urna Ut Associates"),
-    (8, "Camille", "Mckenzie", "sed.tortor.Integer@magnamalesuadavel.co.uk", "6829254716", "2895 Enim Road", "X7B7Y4", "Iqaluit", "NU", "Tellus Ltd"),
-    (9, "Len", "Walker", "Suspendisse@eratvolutpatNulla.edu", "7013684404", "572-5614 Phasellus Rd.", "Y7M1N3", "Whitehorse", "YT", "Blandit Limited"),
-    (10, "Simone", "Leon", "non.quam.Pellentesque@loremsemperauctor.co.uk", "4626947612", "859-7708 Placerat, Street", "V8J5X6", "Terrance", "BC", "Aenean Eget Inc.");
+    ("Carlos", "Mayer", "sed.dui@ipsum.co.uk", "4489980672", "Ap #701-5466 Donec Av.", "G1L0P5", "Richmond", "QC", "Mauris Nulla Corp."),
+    ("Sacha", "Fleming", "Nulla@felispurusac.ca", "3284912130", "2892 Risus. Avenue", "N3M0H2", "Essex", "ON", "Volutpat PC"),
+    ("Eliana", "Holt", "lorem.ac@semmollis.net", "9333638412", "606-7765 Posuere Street", "J6C1R5", "Saint-Hilarion", "QC", "Ut Tincidunt Vehicula Institute"),
+    ("Tana", "Potter", "lectus.Nullam@lobortisClassaptent.net", "4162164060", "P.O. Box 867, 6193 At Rd.", "T9A0V2", "Calmar", "AB", "Ligula Tortor PC"),
+    ("Galvin", "Middleton", "magna.tellus.faucibus@neque.org", "5398889875", "385-508 Tempus, Road", "V3W3V1", "Cariboo Regional District", "BC", "Gravida LLC"),
+    ("Laith", "Snider", "at.pede.Cras@euismod.com", "4111785748", "6649 Et Ave", "T7A0J4", "Trochu", "AB", "Id Sapien Company"),
+    ("Donna", "Raymond", "Nullam.suscipit.est@anteiaculisnec.edu", "2719483807", "173-3595 Adipiscing Rd.", "T6X0Y7", "Edmonton", "AB", "Urna Ut Associates"),
+    ("Camille", "Mckenzie", "sed.tortor.Integer@magnamalesuadavel.co.uk", "6829254716", "2895 Enim Road", "X7B7Y4", "Iqaluit", "NU", "Tellus Ltd"),
+    ("Len", "Walker", "Suspendisse@eratvolutpatNulla.edu", "7013684404", "572-5614 Phasellus Rd.", "Y7M1N3", "Whitehorse", "YT", "Blandit Limited"),
+    ("Simone", "Leon", "non.quam.Pellentesque@loremsemperauctor.co.uk", "4626947612", "859-7708 Placerat, Street", "V8J5X6", "Terrance", "BC", "Aenean Eget Inc.");
 
 
-INSERT INTO Authors -- (id,name)
+INSERT INTO Authors
+    (Name)
 VALUES
-    (1, "Lois Walls"),
-    (2, "Phillip Bass"),
-    (3, "Bradley Woodard"),
-    (4, "William Kim"),
-    (5, "Wynter House"),
-    (6, "Steel Wyatt"),
-    (7, "Dane Henderson"),
-    (8, "Keane Ramirez"),
-    (9, "Shellie Little"),
-    (10, "Maile Crane");
+    ("Lois Walls"),
+    ("Phillip Bass"),
+    ("Bradley Woodard"),
+    ("William Kim"),
+    ("Wynter House"),
+    ("Steel Wyatt"),
+    ("Dane Henderson"),
+    ("Keane Ramirez"),
+    ("Shellie Little"),
+    ("Maile Crane");
 
---TODO ReaderInterests
-
-INSERT INTO Publishers --(id, website, email, phone, companyName, address, city, province, postalcode)
+INSERT INTO Publishers
+    (Website, Email, Phone, CompanyName, Address, City, Province, PostalCode)
 VALUES
-    (1, "publisherweb.info", "sed.sapien.Nunc@diam.net", "8933717051", "Convallis Ligula Donec Consulting", "124-9479 Lectus Ave", "Chesapeake", "VA", "V3N4B6"),
-    (2, "publishernow.org", "quis.tristique.ac@volutpatNulla.co.uk", "3471083820", "Elit A Feugiat LLC", "291-6511 Ipsum. Ave", "Frederick", "MD", "L1N3M1"),
-    (3, "publisher-me.com", "dictum.mi@velnislQuisque.com", "7333852178", "Feugiat Inc.", "340-9985 Nec Av.", "Stamford", "CT", "Q2N3N2"),
-    (4, "publisherhome.info", "mi.eleifend@nonluctussit.edu", "3702237251", "Malesuada Fringilla Est Industries", "914-9798 Lacinia Ave", "Shawinigan", "QC", "G6B1A0"),
-    (5, "mypublisher.blog", "et.rutrum.non@sociisnatoque.com", "3628282066", "Placerat Orci Lacus Industries", "3640 Pulvinar St.", "New Orleans", "LA", "N3M2V1"),
-    (6, "publisher-online.net", "vitae@velesttempor.org", "2649082829", "Tempor Arcu Vestibulum Foundation", "224-7883 Quisque Avenue", "Newport News", "VA", "B9S1K2"),
-    (7, "publisherstar.org", "ultrices.posuere@vulputateeuodio.ca", "7609143376", "Duis A Mi Inc.", "P.O. Box 504, 5906 Consequat Avenue", "Green Bay", "WI", "V2Z3E0"),
-    (8, "publisher-me.blog", "molestie.Sed.id@feugiatnecdiam.net", "9081194200", "Orci PC", "680-4469 Consectetuer Road", "Mission", "BC", "V6N6B6"),
-    (9, "publisherme.info", "vestibulum@accumsanconvallis.net", "7245284833", "Augue Scelerisque Mollis Industries", "P.O. Box 250, 5221 Tempor Rd.", "Portland", "ME", "H4NB5Z"),
-    (10, "yourpublisher.blog", "mus.Proin.vel@dolorNulla.edu", "2099826339", "Vitae LLP", "685 Eros St.", "Carleton", "QC", "H6Z9M6");
+    ("publisherweb.info", "sed.sapien.Nunc@diam.net", "8933717051", "Convallis Ligula Donec Consulting", "124-9479 Lectus Ave", "Chesapeake", "VA", "V3N4B6"),
+    ("publishernow.org", "quis.tristique.ac@volutpatNulla.co.uk", "3471083820", "Elit A Feugiat LLC", "291-6511 Ipsum. Ave", "Frederick", "MD", "L1N3M1"),
+    ("publisher-me.com", "dictum.mi@velnislQuisque.com", "7333852178", "Feugiat Inc.", "340-9985 Nec Av.", "Stamford", "CT", "Q2N3N2"),
+    ("publisherhome.info", "mi.eleifend@nonluctussit.edu", "3702237251", "Malesuada Fringilla Est Industries", "914-9798 Lacinia Ave", "Shawinigan", "QC", "G6B1A0"),
+    ("mypublisher.blog", "et.rutrum.non@sociisnatoque.com", "3628282066", "Placerat Orci Lacus Industries", "3640 Pulvinar St.", "New Orleans", "LA", "N3M2V1"),
+    ("publisher-online.net", "vitae@velesttempor.org", "2649082829", "Tempor Arcu Vestibulum Foundation", "224-7883 Quisque Avenue", "Newport News", "VA", "B9S1K2"),
+    ("publisherstar.org", "ultrices.posuere@vulputateeuodio.ca", "7609143376", "Duis A Mi Inc.", "P.O. Box 504, 5906 Consequat Avenue", "Green Bay", "WI", "V2Z3E0"),
+    ("publisher-me.blog", "molestie.Sed.id@feugiatnecdiam.net", "9081194200", "Orci PC", "680-4469 Consectetuer Road", "Mission", "BC", "V6N6B6"),
+    ("publisherme.info", "vestibulum@accumsanconvallis.net", "7245284833", "Augue Scelerisque Mollis Industries", "P.O. Box 250, 5221 Tempor Rd.", "Portland", "ME", "H4NB5Z"),
+    ("yourpublisher.blog", "mus.Proin.vel@dolorNulla.edu", "2099826339", "Vitae LLP", "685 Eros St.", "Carleton", "QC", "H6Z9M6");
 
-INSERT INTO Branches --(id,branchName,representative,email,phone,address,city,province,postalcode,publisherid)
+INSERT INTO Branches
+    (BranchName, Representative, Email, Phone, Address, City, Province, PostalCode, PublisherId)
 VALUES
-    (1, "Et Malesuada Fames PC", "Ina Atkinson", "Mauris.vel.turpis@leoCrasvehicula.co.uk", "9807492551", "8608 Vitae Rd.", "Olathe", "KS", "P9N1M6", 1),
-    (2, "Cursus Corp.", "Blair Vance", "et.ultrices.posuere@semper.edu", "8142692845", "800-3636 Sem. Street", "Paradise", "NL", "A6R2R0", 2),
-    (3, "Odio Nam Limited", "Pandora Abbott", "accumsan@Proinvelit.co.uk", "8682575094", "521 At, Street", "Bangor", "ME", "W3A1N3", 3),
-    (4, "Libero Ltd", "Yoshio Coffey", "Integer.id@Suspendisse.co.uk", "4882559133", "P.O. Box 709, 4789 Luctus Rd.", "Oklahoma City", "OK", "H2N3V1", 4),
-    (5, "Nunc Institute", "Ivana Burks", "sodales@vehiculaaliquetlibero.co.uk", "4236053299", "574-250 Morbi St.", "Tampa", "FL", "A3B3V9", 5),
-    (6, "Tortor Associates", "Demetria Marquez", "Donec.elementum@natoquepenatibus.co.uk", "1334893192", "5695 Consectetuer Avenue", "Lethbridge", "AB", "T9H3X8", 6),
-    (7, "Aliquam Eu Accumsan LLC", "Michelle Tran", "nonummy.ac.feugiat@etcommodo.net", "4314603971", "P.O. Box 355, 5004 Elit Avenue", "Tulsa", "OK", "S9S8J1", 7),
-    (8, "Lorem Luctus Company", "Ainsley Key", "at.iaculis@nec.co.uk", "1327000832", "P.O. Box 825, 7375 Et St.", "Anchorage", "AK", "Z7C7E8", 8),
-    (9, "Sit Amet Orci LLP", "Caesar Ray", "urna.Ut.tincidunt@euligula.org", "7622075599", "P.O. Box 968, 3823 Velit Rd.", "Vilna", "AB", "T4E0W3", 9),
-    (10, "Ante Maecenas Corp.", "Hayfa Glass", "gravida.molestie.arcu@lobortisauguescelerisque.net", "7624375646", "855-2020 Curabitur Road", "Flint", "MI", "L2B4N1", 10);
+    ("Et Malesuada Fames PC", "Ina Atkinson", "Mauris.vel.turpis@leoCrasvehicula.co.uk", "9807492551", "8608 Vitae Rd.", "Olathe", "KS", "P9N1M6", 1),
+    ("Cursus Corp.", "Blair Vance", "et.ultrices.posuere@semper.edu", "8142692845", "800-3636 Sem. Street", "Paradise", "NL", "A6R2R0", 2),
+    ("Odio Nam Limited", "Pandora Abbott", "accumsan@Proinvelit.co.uk", "8682575094", "521 At, Street", "Bangor", "ME", "W3A1N3", 3),
+    ("Libero Ltd", "Yoshio Coffey", "Integer.id@Suspendisse.co.uk", "4882559133", "P.O. Box 709, 4789 Luctus Rd.", "Oklahoma City", "OK", "H2N3V1", 4),
+    ("Nunc Institute", "Ivana Burks", "sodales@vehiculaaliquetlibero.co.uk", "4236053299", "574-250 Morbi St.", "Tampa", "FL", "A3B3V9", 5),
+    ("Tortor Associates", "Demetria Marquez", "Donec.elementum@natoquepenatibus.co.uk", "1334893192", "5695 Consectetuer Avenue", "Lethbridge", "AB", "T9H3X8", 6),
+    ("Aliquam Eu Accumsan LLC", "Michelle Tran", "nonummy.ac.feugiat@etcommodo.net", "4314603971", "P.O. Box 355, 5004 Elit Avenue", "Tulsa", "OK", "S9S8J1", 7),
+    ("Lorem Luctus Company", "Ainsley Key", "at.iaculis@nec.co.uk", "1327000832", "P.O. Box 825, 7375 Et St.", "Anchorage", "AK", "Z7C7E8", 8),
+    ("Sit Amet Orci LLP", "Caesar Ray", "urna.Ut.tincidunt@euligula.org", "7622075599", "P.O. Box 968, 3823 Velit Rd.", "Vilna", "AB", "T4E0W3", 9),
+    ("Ante Maecenas Corp.", "Hayfa Glass", "gravida.molestie.arcu@lobortisauguescelerisque.net", "7624375646", "855-2020 Curabitur Road", "Flint", "MI", "L2B4N1", 10);
 
-INSERT INTO Books --( ISBN, Title , BookSubject, QuantityOnHand, YearToDateQuantitySold, CostPrice, SellingPrice, AuthorId, PublisherId)
+INSERT INTO Books
+    (ISBN, Title , BookSubject, QuantityOnHand, YearToDateQuantitySold, CostPrice, SellingPrice, AuthorId, PublisherId)
 VALUES
     ("9781783085569", "A Midsummer Night's Dream in Context: Magic, Madness and Mayhem", "English Literature", 40 , 336 , 22.5, 27.99, 1, 1 ),
     ("9780748638482", "The Alids: The First Family of Islam", "Religion", 21  , 613, 20, 24.99, 2, 2 ),
@@ -79,7 +83,8 @@ VALUES
     ("9781316271353", "The 'Conspiracy' of Free Trade: The Anglo-American Struggle over Empire and Economic Globalisation", "History Cross Discipline", 22  , 778 , 45.5, 55.99, 9, 9 ),
     ("9781846159572", "The 'Continuations' of Chrétien's 'Perceval': Content and Construction, Extension and Ending", "English Literature", 19  , 401, 94.25, 114.99, 10, 10 );
 
-INSERT INTO Inventories --(BookstoreId, QuantityOnHand, ISBN)
+INSERT INTO Inventories
+    (BookstoreId, QuantityOnHand, ISBN)
 VALUES
     (1, 4, "9781783085569"),
     (1, 2, "9780748638482"),
@@ -192,21 +197,22 @@ VALUES
     (10, 1, "9781846159572");
 
 
-INSERT INTO BranchHasBooks --(BranchId, ISBN, Quantity)
+INSERT INTO BranchesBooks
+    (BranchId, ISBN, Quantity)
 VALUES
     (1, "9781783085569", 1),
     (2, "9780748638482", 15),
     (3, "9780511555121", 14),
-    (4, "9780511554773", 6 ),
-    (5, "9780511779527", 3 ),
-    (6, "9780511581816", 1 ),
+    (4, "9780511554773", 6),
+    (5, "9780511779527", 3),
+    (6, "9780511581816", 1),
     (7, "9781580466806", 13),
-    (8, "9781139872072", 6 ),
-    (9, "9781316271353", 0 ),
+    (8, "9781139872072", 6),
+    (9, "9781316271353", 0),
     (10, "9781846159572", 4);
 
---TODO : Transactions
---TODO: Orders
+-- TODO :Transactions
+-- TODO:Orders
 
 -- INSERT INTO Orders
 -- VALUES
