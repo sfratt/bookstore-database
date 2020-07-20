@@ -2,9 +2,14 @@ DROP DATABASE IF EXISTS Bookstore;
 CREATE DATABASE Bookstore;
 USE Bookstore;
 
-CREATE TABLE Customers
-(
-    CustomerId INT NOT NULL PRIMARY KEY,
+CREATE TABLE Bookstores (
+    BookstoreId INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    Address VARCHAR(100),
+    PRIMARY KEY (BookstoreId)
+)  AUTO_INCREMENT=1;
+
+CREATE TABLE Customers (
+    CustomerId INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     FirstName VARCHAR(100),
     LastName VARCHAR(100),
     Email VARCHAR(100),
@@ -13,25 +18,26 @@ CREATE TABLE Customers
     PostalCode VARCHAR(6),
     City VARCHAR(100),
     Province VARCHAR(2),
-    CompanyName VARCHAR(100),
-    CumulativePurchases INT
+    CompanyName VARCHAR(100)
+)  AUTO_INCREMENT=1;
+
+CREATE TABLE Authors (
+    AuthorId INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(100)
+)  AUTO_INCREMENT=1;
+
+CREATE TABLE ReaderInterests (
+    AuthorId INT UNSIGNED NOT NULL,
+    CustomerId INT UNSIGNED NOT NULL,
+    FOREIGN KEY (AuthorId)
+        REFERENCES Authors (AuthorId),
+    FOREIGN KEY (CustomerId)
+        REFERENCES Customers (CustomerId),
+    PRIMARY KEY (AuthorId , CustomerId)
 );
 
-CREATE TABLE Books
-(
-    ISBN VARCHAR(13) NOT NULL PRIMARY KEY,
-    Author VARCHAR(100),
-    Title VARCHAR(200),
-    BookSubject VARCHAR(100),
-    QuantityOnHand INT,
-    YearToDateQuantitySold INT,
-    CostPrice DECIMAL(4,2),
-    SellingPrice DECIMAL(4,2)
-);
-
-CREATE TABLE Publishers
-(
-    PublisherId INT NOT NULL PRIMARY KEY,
+CREATE TABLE Publishers (
+    PublisherId INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     Website VARCHAR(100),
     Email VARCHAR(100),
     Phone VARCHAR(12),
@@ -40,31 +46,81 @@ CREATE TABLE Publishers
     City VARCHAR(100),
     Province VARCHAR(2),
     PostalCode VARCHAR(6)
-);
+)  AUTO_INCREMENT=1;
 
-CREATE TABLE Orders
-(
-    OrderNumber INT NOT NULL PRIMARY KEY,
-    OrderDate DATE,
-    QuantityOrdered INT,
-    ISBN VARCHAR(13),
-    FOREIGN KEY (ISBN) REFERENCES Books(ISBN),
-    PublisherId INT,
-    FOREIGN KEY (PublisherId) REFERENCES Publishers(PublisherId),
-    BranchId INT,
-    FOREIGN KEY (BranchId) REFERENCES Branches(BranchId)
-);
-
-CREATE TABLE Branches
-(
-    BranchId INT NOT NULL PRIMARY KEY,
+CREATE TABLE Branches (
+    BranchId INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     BranchName VARCHAR(100),
     Representative VARCHAR(100),
     Email VARCHAR(100),
     Phone VARCHAR(12),
     Address VARCHAR(100),
+    City VARCHAR(100),
     Province VARCHAR(2),
     PostalCode VARCHAR(6),
-    PublisherId INT,
-    FOREIGN KEY (PublisherId) REFERENCES Publishers(PublisherId)
+    PublisherId INT UNSIGNED NOT NULL,
+    FOREIGN KEY (PublisherId)
+        REFERENCES Publishers (PublisherId)
+)  AUTO_INCREMENT=1;
+
+CREATE TABLE Books (
+    ISBN VARCHAR(13) NOT NULL PRIMARY KEY,
+    Title VARCHAR(200),
+    BookSubject VARCHAR(100),
+    QuantityOnHand INT,
+    YearToDateQuantitySold INT,
+    CostPrice DECIMAL(6 , 2 ),
+    SellingPrice DECIMAL(6 , 2 ),
+    AuthorId INT UNSIGNED NOT NULL,
+    PublisherId INT UNSIGNED NOT NULL,
+    FOREIGN KEY (AuthorId)
+        REFERENCES Authors (AuthorId),
+    FOREIGN KEY (PublisherId)
+        REFERENCES Publishers (PublisherId)
 );
+
+CREATE TABLE Inventories (
+    BookstoreId INT UNSIGNED NOT NULL,
+    QuantityOnHand INT,
+    ISBN VARCHAR(13) NOT NULL,
+    PRIMARY KEY (BookstoreId , ISBN),
+    FOREIGN KEY (BookstoreId)
+        REFERENCES Bookstores (BookstoreId),
+    FOREIGN KEY (ISBN)
+        REFERENCES Books (ISBN)
+);
+
+CREATE TABLE BranchHasBooks (
+    BranchId INT UNSIGNED NOT NULL,
+    ISBN VARCHAR(13) NOT NULL,
+    Quantity INT,
+    PRIMARY KEY (BranchId , ISBN)
+);
+
+CREATE TABLE Transactions (
+    TransactionId INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Price DECIMAL(4 , 2 ),
+    Quantity INT,
+    ISBN VARCHAR(13) NOT NULL,
+    CustomerId INT UNSIGNED NOT NULL,
+    BookstoreId INT UNSIGNED NOT NULL,
+    FOREIGN KEY (CustomerId)
+        REFERENCES Customers (CustomerId),
+    FOREIGN KEY (BookstoreId)
+        REFERENCES Bookstores (BookstoreId)
+)  AUTO_INCREMENT=1;
+
+CREATE TABLE Orders (
+    OrderNumber INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    OrderDate DATE,
+    QuantityOrdered INT,
+    ISBN VARCHAR(13),
+    PublisherId INT UNSIGNED NOT NULL,
+    BranchId INT UNSIGNED NOT NULL,
+    FOREIGN KEY (ISBN)
+        REFERENCES Books (ISBN),
+    FOREIGN KEY (PublisherId)
+        REFERENCES Publishers (PublisherId),
+    FOREIGN KEY (BranchId)
+        REFERENCES Branches (BranchId)
+)  AUTO_INCREMENT=1;
