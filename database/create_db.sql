@@ -11,15 +11,14 @@ CREATE TABLE Bookstores
 
 CREATE TABLE Inventories
 (
-	BookstoreId int unsigned NOT NULL auto_increment,
+	BookstoreId INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     QuantityOnHand INT,
-    FOREIGN KEY (BookstoreId) REFERENCES Bookstores(BookstoreId),
-    PRIMARY KEY (BookstoreId)
-) AUTO_INCREMENT=1;
+    FOREIGN KEY (BookstoreId) REFERENCES Bookstores(BookstoreId)
+);
 
 CREATE TABLE Customers
 (
-    CustomerId INT UNSIGNED NOT NULL auto_increment,
+    CustomerId INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     FirstName VARCHAR(100),
     LastName VARCHAR(100),
     Email VARCHAR(100),
@@ -28,14 +27,12 @@ CREATE TABLE Customers
     PostalCode VARCHAR(6),
     City VARCHAR(100),
     Province VARCHAR(2),
-    CompanyName VARCHAR(100),
-    PRIMARY KEY (CustomerId)
+    CompanyName VARCHAR(100)
 ) AUTO_INCREMENT=1;
 
 CREATE TABLE Authors(
-	AuthorId INT UNSIGNED NOT NULL auto_increment,
-    Name VARCHAR(100),
-    PRIMARY KEY (AuthorId)
+	AuthorId INT UNSIGNED NOT NULL PRIMARY KEY auto_increment,
+    Name VARCHAR(100)
 ) AUTO_INCREMENT=1;
 
 CREATE TABLE ReaderInterests(
@@ -48,7 +45,7 @@ CREATE TABLE ReaderInterests(
 
 CREATE TABLE Publishers
 (
-    PublisherId INT UNSIGNED NOT NULL auto_increment,
+    PublisherId INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     Website VARCHAR(100),
     Email VARCHAR(100),
     Phone VARCHAR(12),
@@ -56,13 +53,12 @@ CREATE TABLE Publishers
     Address VARCHAR(100),
     City VARCHAR(100),
     Province VARCHAR(2),
-    PostalCode VARCHAR(6),
-    PRIMARY KEY (PublisherId)
+    PostalCode VARCHAR(6)
 ) AUTO_INCREMENT=1;
 
 CREATE TABLE Branches
 (
-    BranchId INT UNSIGNED NOT NULL auto_increment,
+    BranchId INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     BranchName VARCHAR(100),
     Representative VARCHAR(100),
     Email VARCHAR(100),
@@ -71,8 +67,7 @@ CREATE TABLE Branches
     Province VARCHAR(2),
     PostalCode VARCHAR(6),
     PublisherId INT UNSIGNED NOT NULL,
-    FOREIGN KEY (PublisherId) REFERENCES Publishers(PublisherId),
-    PRIMARY KEY (BranchId)
+    FOREIGN KEY (PublisherId) REFERENCES Publishers(PublisherId)
 ) AUTO_INCREMENT=1;
 
 CREATE TABLE Books
@@ -98,7 +93,7 @@ CREATE TABLE BranchHasBooks(
 );
 
 CREATE TABLE Transactions(
-	TransactionId INT UNSIGNED NOT NULL PRIMARY KEY auto_increment,
+	TransactionId INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     Price DECIMAL(4,2),
     Quantity INT,
     ISBN VARCHAR(13) NOT NULL,
@@ -110,7 +105,7 @@ CREATE TABLE Transactions(
 
 CREATE TABLE Orders
 (
-    OrderNumber INT NOT NULL PRIMARY KEY,
+    OrderNumber INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     OrderDate DATE,
     QuantityOrdered INT,
     ISBN VARCHAR(13),
@@ -119,4 +114,4 @@ CREATE TABLE Orders
     FOREIGN KEY (ISBN) REFERENCES Books(ISBN),
     FOREIGN KEY (PublisherId) REFERENCES Publishers(PublisherId),
     FOREIGN KEY (BranchId) REFERENCES Branches(BranchId)
-);
+) AUTO_INCREMENT=1;
