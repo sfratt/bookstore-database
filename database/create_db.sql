@@ -96,7 +96,7 @@ CREATE TABLE Inventories
     FOREIGN KEY (ISBN) REFERENCES Books (ISBN)
 );
 
-CREATE TABLE BranchHasBooks
+CREATE TABLE BranchesBooks
 (
     BranchId INT NOT NULL,
     ISBN VARCHAR(13) NOT NULL,
