@@ -42,16 +42,16 @@ VALUES
 
 INSERT INTO Publishers --(id, website, email, phone, companyName, address, city, province, postalcode)
 VALUES
-    (1, "Anthem Press", "publisherweb.info","sed.sapien.Nunc@diam.net","8933717051","Convallis Ligula Donec Consulting","124-9479 Lectus Ave","Chesapeake","VA","V3N4B6"),
-    (2, "Edinburgh University Press", "publishernow.org","quis.tristique.ac@volutpatNulla.co.uk","3471083820","Elit A Feugiat LLC","291-6511 Ipsum. Ave","Frederick","MD","L1N3M1"),
-    (3, "Cambridge University Press", "publisher-me.com","dictum.mi@velnislQuisque.com","7333852178","Feugiat Inc.","340-9985 Nec Av.","Stamford","CT","Q2N3N2"),
-    (4, "UFT University Press", "publisherhome.info","mi.eleifend@nonluctussit.edu","3702237251","Malesuada Fringilla Est Industries","914-9798 Lacinia Ave","Shawinigan","QC","G6B1A0"),
-    (5, "Wiley", "mypublisher.blog","et.rutrum.non@sociisnatoque.com","3628282066","Placerat Orci Lacus Industries","3640 Pulvinar St.","New Orleans","LA","N3M2V1"),
-    (6, "SOLO Books", "publisher-online.net","vitae@velesttempor.org","2649082829","Tempor Arcu Vestibulum Foundation","224-7883 Quisque Avenue","Newport News","VA","B9S1K2"),
-    (7, "Boydell & Brewer", "publisherstar.org","ultrices.posuere@vulputateeuodio.ca","7609143376","Duis A Mi Inc.","P.O. Box 504, 5906 Consequat Avenue","Green Bay","WI","V2Z3E0"),
-    (8, "Merriam", "publisher-me.blog","molestie.Sed.id@feugiatnecdiam.net","9081194200","Orci PC","680-4469 Consectetuer Road","Mission","BC","V6N6B6"),
-    (9, "Ocanegan Press", "publisherme.info","vestibulum@accumsanconvallis.net","7245284833","Augue Scelerisque Mollis Industries","P.O. Box 250, 5221 Tempor Rd.","Portland","ME","H4NB5Z"),
-    (10,"University of Toronto", "yourpublisher.blog","mus.Proin.vel@dolorNulla.edu","2099826339","Vitae LLP","685 Eros St.","Carleton","QC","H6Z9M6");
+    (1,        "publisherweb.info","sed.sapien.Nunc@diam.net","8933717051","Convallis Ligula Donec Consulting","124-9479 Lectus Ave","Chesapeake","VA","V3N4B6"),
+    (2,                  "publishernow.org","quis.tristique.ac@volutpatNulla.co.uk","3471083820","Elit A Feugiat LLC","291-6511 Ipsum. Ave","Frederick","MD","L1N3M1"),
+    (3,                    "publisher-me.com","dictum.mi@velnislQuisque.com","7333852178","Feugiat Inc.","340-9985 Nec Av.","Stamford","CT","Q2N3N2"),
+    (4,                "publisherhome.info","mi.eleifend@nonluctussit.edu","3702237251","Malesuada Fringilla Est Industries","914-9798 Lacinia Ave","Shawinigan","QC","G6B1A0"),
+    (5,    "mypublisher.blog","et.rutrum.non@sociisnatoque.com","3628282066","Placerat Orci Lacus Industries","3640 Pulvinar St.","New Orleans","LA","N3M2V1"),
+    (6,       "publisher-online.net","vitae@velesttempor.org","2649082829","Tempor Arcu Vestibulum Foundation","224-7883 Quisque Avenue","Newport News","VA","B9S1K2"),
+    (7,            "publisherstar.org","ultrices.posuere@vulputateeuodio.ca","7609143376","Duis A Mi Inc.","P.O. Box 504, 5906 Consequat Avenue","Green Bay","WI","V2Z3E0"),
+    (8,    "publisher-me.blog","molestie.Sed.id@feugiatnecdiam.net","9081194200","Orci PC","680-4469 Consectetuer Road","Mission","BC","V6N6B6"),
+    (9,            "publisherme.info","vestibulum@accumsanconvallis.net","7245284833","Augue Scelerisque Mollis Industries","P.O. Box 250, 5221 Tempor Rd.","Portland","ME","H4NB5Z"),
+    (10,                   "yourpublisher.blog","mus.Proin.vel@dolorNulla.edu","2099826339","Vitae LLP","685 Eros St.","Carleton","QC","H6Z9M6");
 
 INSERT INTO Branches --(id,branchName,representative,email,phone,address,city,province,postalcode,publisherid)
 VALUES 
@@ -69,15 +69,15 @@ VALUES
 INSERT INTO Books --( ISBN, Title , BookSubject, QuantityOnHand, YearToDateQuantitySold, CostPrice, SellingPrice, AuthorId, PublisherId)
 VALUES
     ("9781783085569", "A Midsummer Night's Dream in Context: Magic, Madness and Mayhem", "English Literature",40 , 336 , 22.5, 27.99,1,1 ),
-    ("9780748638482", "The Alids: The First Family of Islam", "Religion",21  , 613, 20, 24.99,1,2 ), 
-    ("9780511555121", "And so we Came to Rome: The Political Perspective of St Luke", "Religion", 24 , 715, 18, 22.99,1,3 ),
-    ("9780511554773", "And The Two Shall Become One Flesh: A Study of Traditions in Ephesians", "Religion", 27    , 266 , 71.75, 86.99,1,4 ),
-    ("9780511779527", "Armed Attack and Article 51 of the UN Charter: Evolutions in Customary Law and Practice", "Law",  20  , 556, 53, 64.99,1,5 ),
-    ("9780511581816", "By the Banks of the Neva: Chapters from the Lives and Careers of the British in Eighteenth-Century Russia", "European History", 32 , 369 , 29.25, 35.99,2,6 ),
-    ("9781580466806", "By My Absolute Royal Authority: Justice and the Castilian Commonwealth at the Beginning of the First Global Age", "European History",15    , 740 , 66, 79.99,2,7 ),
-    ("9781139872072", "The 'Colored Hero' of Harper's Ferry: John Anthony Copeland and the War against Slavery", "American History", 21   , 523 , 123.75, 149.99,2,8 ),
-    ("9781316271353", "The 'Conspiracy' of Free Trade: The Anglo-American Struggle over Empire and Economic Globalisation", "History Cross Discipline",   22  , 778 , 45.5, 55.99,2,9 ),
-    ("9781846159572", "The 'Continuations' of Chrétien's 'Perceval': Content and Construction, Extension and Ending", "English Literature",  19  , 401, 94.25, 114.99,2,10 );
+    ("9780748638482", "The Alids: The First Family of Islam", "Religion",21  , 613, 20, 24.99,2,2 ), 
+    ("9780511555121", "And so we Came to Rome: The Political Perspective of St Luke", "Religion", 24 , 715, 18, 22.99,3,3 ),
+    ("9780511554773", "And The Two Shall Become One Flesh: A Study of Traditions in Ephesians", "Religion", 27    , 266 , 71.75, 86.99,4,4 ),
+    ("9780511779527", "Armed Attack and Article 51 of the UN Charter: Evolutions in Customary Law and Practice", "Law",  20  , 556, 53, 64.99,5,5 ),
+    ("9780511581816", "By the Banks of the Neva: Chapters from the Lives and Careers of the British in Eighteenth-Century Russia", "European History", 32 , 369 , 29.25, 35.99,6,6 ),
+    ("9781580466806", "By My Absolute Royal Authority: Justice and the Castilian Commonwealth at the Beginning of the First Global Age", "European History",15    , 740 , 66, 79.99,7,7 ),
+    ("9781139872072", "The 'Colored Hero' of Harper's Ferry: John Anthony Copeland and the War against Slavery", "American History", 21   , 523 , 123.75, 149.99,8,8 ),
+    ("9781316271353", "The 'Conspiracy' of Free Trade: The Anglo-American Struggle over Empire and Economic Globalisation", "History Cross Discipline",   22  , 778 , 45.5, 55.99,9,9 ),
+    ("9781846159572", "The 'Continuations' of Chrétien's 'Perceval': Content and Construction, Extension and Ending", "English Literature",  19  , 401, 94.25, 114.99,10,10 );
 
 INSERT INTO Inventories --(BookstoreId, QuantityOnHand, ISBN)
 VALUES
