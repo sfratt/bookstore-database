@@ -9,13 +9,6 @@ CREATE TABLE Bookstores
     PRIMARY KEY (BookstoreId)
 ) AUTO_INCREMENT=1;
 
-CREATE TABLE Inventories
-(
-	BookstoreId INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    QuantityOnHand INT,
-    FOREIGN KEY (BookstoreId) REFERENCES Bookstores(BookstoreId)
-);
-
 CREATE TABLE Customers
 (
     CustomerId INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -83,6 +76,15 @@ CREATE TABLE Books
     PublisherId INT UNSIGNED NOT NULL,
     FOREIGN KEY (AuthorId) REFERENCES Authors(AuthorId),
     FOREIGN KEY (PublisherId) REFERENCES Publishers(PublisherId)
+);
+
+CREATE TABLE Inventories
+(
+	BookstoreId INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    QuantityOnHand INT,
+    ISBN VARCHAR(13) NOT NULL,
+    FOREIGN KEY (BookstoreId) REFERENCES Bookstores(BookstoreId),
+    FOREIGN KEY (ISBN) REFERENCES Books(ISBN)
 );
 
 CREATE TABLE BranchHasBooks(
