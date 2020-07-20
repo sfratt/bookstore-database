@@ -3,4 +3,5 @@
 SELECT Books.*
 FROM Books, Publishers
 WHERE Publishers.PublisherId = 1
-ORDER BY Books.SellingPrice ASC; 
+ORDER BY Books.SellingPrice ASC;
+ 
