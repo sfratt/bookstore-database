@@ -107,7 +107,7 @@ CREATE TABLE BranchesBooks
 CREATE TABLE Transactions
 (
     TransactionId INT NOT NULL,
-    Price DECIMAL(4, 2),
+    Price DECIMAL(6, 2),
     Quantity INT,
     ISBN VARCHAR(13) NOT NULL,
     CustomerId INT NOT NULL,
