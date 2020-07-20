@@ -1,0 +1,1 @@
+-- ix. Get details of books that are in the inventory for at least one year but there have never been a purchase for that specific book.
