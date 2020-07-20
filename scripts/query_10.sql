@@ -1,0 +1,1 @@
+-- x. Get details of all books that are in the inventory for a given author.
