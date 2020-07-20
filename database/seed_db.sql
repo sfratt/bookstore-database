@@ -65,7 +65,7 @@ VALUES
     (9, "publisherme.info", "vestibulum@accumsanconvallis.net", "7245284833", "Augue Scelerisque Mollis Industries", "P.O. Box 250, 5221 Tempor Rd.", "Portland", "ME", "H4NB5Z"),
     (10, "yourpublisher.blog", "mus.Proin.vel@dolorNulla.edu", "2099826339", "Vitae LLP", "685 Eros St.", "Carleton", "QC", "H6Z9M6");
 
-INSERT INTO Branches --(id,branchName,representative,email,phone,address,city,province,postalcode,publisherid)
+INSERT INTO Branches -- (id,branchName,representative,email,phone,address,city,province,postalcode,publisherid)
 VALUES
     (1, "Et Malesuada Fames PC", "Ina Atkinson", "Mauris.vel.turpis@leoCrasvehicula.co.uk", "9807492551", "8608 Vitae Rd.", "Olathe", "KS", "P9N1M6", 1),
     (2, "Cursus Corp.", "Blair Vance", "et.ultrices.posuere@semper.edu", "8142692845", "800-3636 Sem. Street", "Paradise", "NL", "A6R2R0", 2),
