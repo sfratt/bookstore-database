@@ -32,6 +32,10 @@ GROUP BY Customers.CustomerId;
 -- vi. Find the title and name of publisher of book(s) that have the highest back-order.
 
 -- vii. Give details of books that are supplied by a given publisher ordered by their sale price in increasing order.
+SELECT Books.*
+FROM Books, Publishers
+WHERE Publishers.PublisherId = 1
+ORDER BY Books.SellingPrice ASC; 
 
 -- viii. For all publishers who have at least three branches, get details of the head office and all the branches for those publishers.
 
