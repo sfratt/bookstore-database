@@ -1,4 +1,4 @@
-INSERT INTO Bookstores --(BookstoreId, Address)
+INSERT INTO Bookstores -- (BookstoreId, Address)
 VALUES
     (1 ,"2151 Et Rd.,Pont-Saint-Martin,LB26 6AY,Greenland"),
     (2 ,"1677 Enim Street,Gretna,5336 JH,Jordan"),
@@ -11,7 +11,7 @@ VALUES
     (9 ,"724-6017 Ut Rd.,Brandon,0951 LB,Chile"),
     (10 ,"Ap #698-2229 Metus Road,Burnpur,5494,Belarus");
 
-INSERT INTO Customers --(id,firstname,lastname,email,phone,address,postalcode,city,province,companyName) 
+INSERT INTO Customers -- (id,firstname,lastname,email,phone,address,postalcode,city,province,companyName) 
 VALUES
     (1, "Carlos", "Mayer", "sed.dui@ipsum.co.uk", "4489980672", "Ap #701-5466 Donec Av.", "G1L0P5", "Richmond", "QC", "Mauris Nulla Corp."),
     (2, "Sacha", "Fleming", "Nulla@felispurusac.ca", "3284912130", "2892 Risus. Avenue", "N3M0H2", "Essex", "ON", "Volutpat PC"),
@@ -52,7 +52,7 @@ VALUES
     (8,10);
 
 
-INSERT INTO Publishers --(id, website, email, phone, companyName, address, city, province, postalcode)
+INSERT INTO Publishers -- (id, website, email, phone, companyName, address, city, province, postalcode)
 VALUES
     (1, "publisherweb.info", "sed.sapien.Nunc@diam.net", "8933717051", "Convallis Ligula Donec Consulting", "124-9479 Lectus Ave", "Chesapeake", "VA", "V3N4B6"),
     (2, "publishernow.org", "quis.tristique.ac@volutpatNulla.co.uk", "3471083820", "Elit A Feugiat LLC", "291-6511 Ipsum. Ave", "Frederick", "MD", "L1N3M1"),
@@ -65,7 +65,7 @@ VALUES
     (9, "publisherme.info", "vestibulum@accumsanconvallis.net", "7245284833", "Augue Scelerisque Mollis Industries", "P.O. Box 250, 5221 Tempor Rd.", "Portland", "ME", "H4NB5Z"),
     (10, "yourpublisher.blog", "mus.Proin.vel@dolorNulla.edu", "2099826339", "Vitae LLP", "685 Eros St.", "Carleton", "QC", "H6Z9M6");
 
-INSERT INTO Branches --(id,branchName,representative,email,phone,address,city,province,postalcode,publisherid)
+INSERT INTO Branches -- (id,branchName,representative,email,phone,address,city,province,postalcode,publisherid)
 VALUES
     (1, "Et Malesuada Fames PC", "Ina Atkinson", "Mauris.vel.turpis@leoCrasvehicula.co.uk", "9807492551", "8608 Vitae Rd.", "Olathe", "KS", "P9N1M6", 1),
     (2, "Cursus Corp.", "Blair Vance", "et.ultrices.posuere@semper.edu", "8142692845", "800-3636 Sem. Street", "Paradise", "NL", "A6R2R0", 2),
@@ -78,7 +78,7 @@ VALUES
     (9, "Sit Amet Orci LLP", "Caesar Ray", "urna.Ut.tincidunt@euligula.org", "7622075599", "P.O. Box 968, 3823 Velit Rd.", "Vilna", "AB", "T4E0W3", 9),
     (10, "Ante Maecenas Corp.", "Hayfa Glass", "gravida.molestie.arcu@lobortisauguescelerisque.net", "7624375646", "855-2020 Curabitur Road", "Flint", "MI", "L2B4N1", 10);
 
-INSERT INTO Books --( ISBN, Title , BookSubject, QuantityOnHand, YearToDateQuantitySold, CostPrice, SellingPrice, AuthorId, PublisherId)
+INSERT INTO Books -- ( ISBN, Title , BookSubject, QuantityOnHand, YearToDateQuantitySold, CostPrice, SellingPrice, AuthorId, PublisherId)
 VALUES
     ("9781783085569", "A Midsummer Night's Dream in Context: Magic, Madness and Mayhem", "English Literature", 40 , 336 , 22.5, 27.99, 1, 1 ),
     ("9780748638482", "The Alids: The First Family of Islam", "Religion", 21  , 613, 20, 24.99, 2, 2 ),
@@ -91,7 +91,7 @@ VALUES
     ("9781316271353", "The 'Conspiracy' of Free Trade: The Anglo-American Struggle over Empire and Economic Globalisation", "History Cross Discipline", 22  , 778 , 45.5, 55.99, 9, 9 ),
     ("9781846159572", "The 'Continuations' of Chrétien's 'Perceval': Content and Construction, Extension and Ending", "English Literature", 19  , 401, 94.25, 114.99, 10, 10 );
 
-INSERT INTO Inventories --(BookstoreId, QuantityOnHand, ISBN)
+INSERT INTO Inventories -- (BookstoreId, QuantityOnHand, ISBN)
 VALUES
     (1, 4, "9781783085569"),
     (1, 2, "9780748638482"),
@@ -204,7 +204,7 @@ VALUES
     (10, 1, "9781846159572");
 
 
-INSERT INTO BranchHasBooks --(BranchId, ISBN, Quantity)
+INSERT INTO BranchHasBooks -- (BranchId, ISBN, Quantity)
 VALUES
     (1, "9781783085569", 1),
     (2, "9780748638482", 15),
@@ -217,7 +217,7 @@ VALUES
     (9, "9781316271353", 0 ),
     (10, "9781846159572", 4);
 
-INSERT INTO Transactions --(id, Price, Quantity, ISBN, customerId, bookstoreId)
+INSERT INTO Transactions -- (id, Price, Quantity, ISBN, customerId, bookstoreId)
 VALUES
     (1, 27.99, 4, "9781783085569", 1,1),
     (2, 24.99, 5, "9780748638482", 2,2),
