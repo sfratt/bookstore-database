@@ -2,5 +2,5 @@
 
 SELECT Books.*
 FROM Books
-WHERE QuantityOnHand > 0
+WHERE BOOKS.YearToDateQuantitySold > 0
 ORDER BY YearToDateQuantitySold DESC;
