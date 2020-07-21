@@ -1,8 +1,10 @@
 -- ix. Get details of books that are in the inventory for at least one year but there have never been a purchase for that specific book.
-SELECT Books.*
+SELECT *
 FROM Books
-LEFT OUTER JOIN Transactions
-ON Books.ISBN = Transactions.ISBN
-AND TransactionDate >= "2019-01-01"
-AND TransactionDate < "2020-01-01"
-WHERE Transactions.ISBN IS NULL;
+WHERE Books.ISBN NOT IN (SELECT Orders.ISBN
+                            FROM Orders
+                            WHERE Orders.OrderDate > "2019-07-20")
+    AND Books.ISBN IN (SELECT Inventories.ISBN
+                        FROM Inventories)
+    AND Books.ISBN NOT IN (SELECT Transactions.ISBN
+                            FROM Transactions)
