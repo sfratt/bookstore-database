@@ -1,7 +1,7 @@
 INSERT INTO Bookstores
     (Address)
 VALUES
-    (1 ,"2151 Et Rd.,Pont-Saint-Martin,LB26 6AY,Greenland");
+    ("2151 Et Rd.,Pont-Saint-Martin,LB26 6AY,Greenland");
 
 INSERT INTO Customers
     (FirstName, LastName, Email, Phone, Address, PostalCode, City, Province, CompanyName)
