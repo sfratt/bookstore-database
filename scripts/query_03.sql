@@ -1,6 +1,5 @@
 -- iii. For a given customer, get details of all his/her special orders.
 
-SELECT Customers.*, Orders.*
-FROM Customers, Orders 
-WHERE Customers.CustomerId = Orders.CustomerId
-GROUP BY Customers.CustomerId;
+SELECT Transactions.*
+FROM Customers, Transactions
+WHERE Customers.CustomerId = 1 AND Transactions.CustomerId=1

@@ -112,6 +112,7 @@ CREATE TABLE Transactions
     ISBN VARCHAR(13) NOT NULL,
     CustomerId INT NOT NULL,
     BookstoreId INT NOT NULL,
+    TransactionDate DATE, 
     PRIMARY KEY (TransactionId),
     FOREIGN KEY (CustomerId) REFERENCES Customers (CustomerId),
     FOREIGN KEY (BookstoreId) REFERENCES Bookstores (BookstoreId)
