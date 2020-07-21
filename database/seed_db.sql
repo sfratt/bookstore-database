@@ -1,7 +1,7 @@
 INSERT INTO Bookstores
     (Address)
 VALUES
-    (1 ,"2151 Et Rd.,Pont-Saint-Martin,LB26 6AY,Greenland");
+    ("2151 Et Rd.,Pont-Saint-Martin,LB26 6AY,Greenland");
 
 INSERT INTO Customers
     (FirstName, LastName, Email, Phone, Address, PostalCode, City, Province, CompanyName)
@@ -58,7 +58,9 @@ VALUES
     ("Aliquam Eu Accumsan LLC", "Michelle Tran", "nonummy.ac.feugiat@etcommodo.net", "4314603971", "P.O. Box 355, 5004 Elit Avenue", "Tulsa", "OK", "S9S8J1", 7),
     ("Lorem Luctus Company", "Ainsley Key", "at.iaculis@nec.co.uk", "1327000832", "P.O. Box 825, 7375 Et St.", "Anchorage", "AK", "Z7C7E8", 8),
     ("Sit Amet Orci LLP", "Caesar Ray", "urna.Ut.tincidunt@euligula.org", "7622075599", "P.O. Box 968, 3823 Velit Rd.", "Vilna", "AB", "T4E0W3", 9),
-    ("Ante Maecenas Corp.", "Hayfa Glass", "gravida.molestie.arcu@lobortisauguescelerisque.net", "7624375646", "855-2020 Curabitur Road", "Flint", "MI", "L2B4N1", 10);
+    ("Ante Maecenas Corp.", "Hayfa Glass", "gravida.molestie.arcu@lobortisauguescelerisque.net", "7624375646", "855-2020 Curabitur Road", "Flint", "MI", "L2B4N1", 10),
+    ("Sit Amet BOOKS branch LLP", "Carl Tray", "urna.Ut.tiasidunt@easdigula.org", "7612375689", "P.O. Box 91, 1233 Velvet Rd.", "Carlton", "MB", "T3F2X3", 9),
+    ("Sit Amrmrest BOOKS branch LLP", "Marla Barter", "urna.Udt.tiaqfunt@easdfadgeula.org", "7611234689", "P.O. Box 121, 23 Ocelot Rd.", "Jacksonville", "QC", "T2E2V3", 9);
 
 INSERT INTO Books
     (ISBN, Title , BookSubject, QuantityOnHand, YearToDateQuantitySold, CostPrice, SellingPrice, AuthorId, PublisherId)
@@ -99,8 +101,12 @@ VALUES
     (6, "9780511581816", 1),
     (7, "9781580466806", 13),
     (8, "9781139872072", 6),
+    (9, "9781139872072", 3),
     (9, "9781316271353", 0),
-    (10, "9781846159572", 4);
+    (10, "9781846159572", 4),
+    (11, "9781316271353", 0),
+    (12, "9781316271353", 0),
+    (12, "9781139872072", 0);
 
 INSERT INTO Transactions -- (id, Price, Quantity, ISBN, customerId, bookstoreId)
 VALUES
