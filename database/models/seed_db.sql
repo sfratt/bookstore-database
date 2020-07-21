@@ -77,7 +77,9 @@ VALUES
     ("9781580466806", "By My Absolute Royal Authority: Justice and the Castilian Commonwealth at the Beginning of the First Global Age", "European History", 15    , 740 , 66, 79.99, 7, 7 ),
     ("9781139872072", "The 'Colored Hero' of Harper's Ferry: John Anthony Copeland and the War against Slavery", "American History", 21   , 523 , 123.75, 149.99, 8, 8 ),
     ("9781316271353", "The 'Conspiracy' of Free Trade: The Anglo-American Struggle over Empire and Economic Globalisation", "History Cross Discipline", 22  , 778 , 45.5, 55.99, 9, 9 ),
-    ("9781846159572", "The 'Continuations' of Chrétien's 'Perceval': Content and Construction, Extension and Ending", "English Literature", 19  , 401, 94.25, 114.99, 10, 10 );
+    ("9781846159572", "The 'Continuations' of Chrétien's 'Perceval': Content and Construction, Extension and Ending", "English Literature", 19  , 401, 94.25, 114.99, 10, 10 ),
+    ("9998889998889", "Story of my ife", "Comedy", 20, 0, 20, 22, 1, 10),
+    ("9998889998779", "Bad Hombres", "Drama", 2, 0, 40, 45, 2, 9);
 
 INSERT INTO Inventories
     (BookstoreId, QuantityOnHand, ISBN)
@@ -91,7 +93,9 @@ VALUES
     (1, 15, "9781580466806"),
     (1, 21, "9781139872072"),
     (1, 22, "9781316271353"),
-    (1, 19, "9781846159572");
+    (1, 19, "9781846159572"),
+    (1, 20, "9998889998889"),
+    (1, 30, "9998889998779");
 
 INSERT INTO BranchesBooks
     (BranchId, ISBN, Quantity)
@@ -145,7 +149,9 @@ VALUES
     (17, "2020-01-04",2,"9781580466806" , 7, 7),
     (18, "2020-02-04",3,"9781139872072" , 8, 8),
     (19, "2020-03-04",1,"9781316271353" , 9, 9),
-    (20, "2020-04-04",3,"9781846159572" , 10,10);
+    (20, "2020-04-04",3,"9781846159572" , 10,10),
+    (21, "2010-02-01", 20, "9998889998889", 10, 10),
+    (21, "2020-02-01", 30, "9998889998779", 9, 9);
     
     SELECT COUNT(*) FROM Customers;
 	SELECT COUNT(*) FROM Authors;
