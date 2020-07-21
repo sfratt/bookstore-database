@@ -49,7 +49,10 @@ VALUES
 INSERT INTO Branches
     (BranchName, Representative, Email, Phone, Address, City, Province, PostalCode, PublisherId)
 VALUES
-    ("Et Malesuada Fames PC", "Ina Atkinson", "Mauris.vel.turpis@leoCrasvehicula.co.uk", "9807492551", "8608 Vitae Rd.", "Olathe", "KS", "P9N1M6", 1),
+	("Et Malesuada Fames PC", "Ina Atkinson", "Mauris.vel.turpis@leoCrasvehicula.co.uk", "9807492551", "8608 Vitae Rd.", "Olathe", "KS", "P9N1M6", 1),
+    ("Margarette Benign FC", "James Morrisson", "MargaretteBenign@yahoo.com", "2225557894", "26 Poles Rd.", "Pins", "BC", "P1L5N2", 1),
+    ("Pakhme Polo MC", "Merlin Bays", "MerlinBayes_1022@yahoo.com", "9985562145", "11 Chelsea Rd.", "Relli", "OB", "O2D3F7", 1),
+    ("Shakil Pacco FC", "Bonita Amonita", "Bonita_Amonita@Gmail.com", "8840025487","124-9479 Lectus Ave", "Chesapeake", "VA", "V3N4B6", 1),
     ("Cursus Corp.", "Blair Vance", "et.ultrices.posuere@semper.edu", "8142692845", "800-3636 Sem. Street", "Paradise", "NL", "A6R2R0", 2),
     ("Odio Nam Limited", "Pandora Abbott", "accumsan@Proinvelit.co.uk", "8682575094", "521 At, Street", "Bangor", "ME", "W3A1N3", 3),
     ("Libero Ltd", "Yoshio Coffey", "Integer.id@Suspendisse.co.uk", "4882559133", "P.O. Box 709, 4789 Luctus Rd.", "Oklahoma City", "OK", "H2N3V1", 4),
@@ -143,3 +146,14 @@ VALUES
     (18, "2020-02-04",3,"9781139872072" , 8, 8),
     (19, "2020-03-04",1,"9781316271353" , 9, 9),
     (20, "2020-04-04",3,"9781846159572" , 10,10);
+    
+    SELECT COUNT(*) FROM Customers;
+	SELECT COUNT(*) FROM Authors;
+	SELECT COUNT(*) FROM Publishers;
+    SELECT COUNT(*) FROM Branches;
+    SELECT COUNT(*) FROM Books;
+    SELECT COUNT(*) FROM Inventories;
+    SELECT COUNT(*) FROM BranchesBooks;
+	SELECT COUNT(*) FROM Transactions;
+    SELECT COUNT(*) FROM Orders;
+    
