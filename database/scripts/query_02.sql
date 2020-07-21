@@ -1,6 +1,9 @@
 -- ii. Get details of all back orders for a given publisher.
-SELECT * 
-FROM BranchesBooks, Branches
-WHERE BranchesBooks.BranchId = Branches.BranchId AND Branches.PublisherId = 9
-GROUP BY BranchesBooks.BranchId
-HAVING SUM(BranchesBooks.Quantity) = 0 
+SELECT Orders.*
+FROM Branches
+INNER JOIN BranchesBooks
+ON Branches.BranchId = BranchesBooks.BranchId
+INNER JOIN Orders
+ON Branches.BranchId = Orders.BranchId
+WHERE Branches.PublisherId = 9
+AND BranchesBooks.Quantity = 0;
